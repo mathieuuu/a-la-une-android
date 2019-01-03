@@ -6,7 +6,8 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat">
+        android:theme="@style/Theme.AppCompat"
+        android:label="A la Une">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
