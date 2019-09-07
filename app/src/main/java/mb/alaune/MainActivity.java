@@ -15,7 +15,11 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 
@@ -31,16 +35,16 @@ public class MainActivity extends Activity implements BaseSliderView.OnSliderCli
         setContentView(R.layout.activity_main);
 
         mDemoSlider = (SliderLayout)findViewById(R.id.slider);
-        mDemoSlider.stopAutoCycle();
+        mDemoSlider.stopAutoCycle() ;
 
-        List<String> urls = new ArrayList<String>();
-        urls.add("http://www.revue2presse.fr/newspaper/liberation/liberation-cover.jpg");
-        urls.add("http://www.revue2presse.fr/newspaper/lemonde/lemonde-cover.jpg");
-        urls.add("http://www.revue2presse.fr/newspaper/lefigaro/lefigaro-cover.jpg");
-        urls.add("http://www.revue2presse.fr/newspaper/leparisien/leparisien-cover.jpg");
-        urls.add("http://www.revue2presse.fr/newspaper/lequipe/lequipe-cover.jpg");
+        List<String> papers = Arrays.asList("liberation", "lefigaro", "l_equip", "parisien");
 
-        for(String url : urls){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        String date = simpleDateFormat.format(new Date());
+
+        for(String paper : papers){
+            String url = "http://img.kiosko.net/" + date + "/fr/" + paper + ".750.jpg";
+
             DefaultSliderView textSliderView = new DefaultSliderView(this);
             // initialize a SliderLayout
             textSliderView
